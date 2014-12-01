@@ -27,6 +27,41 @@ ship_col = random_col(board)
 print ship_row
 print ship_col
 
+##Add sytax here:
+
+ship_direction = randint(0,1)
+print "ship_direction:",ship_direction ##O = row, 1 = column ##Comment this line out later
+
+ship_direction2 = randint(0,1)
+print "ship_direction2:",ship_direction2 ##coment this out later.  If 0, subtract one from ship_row/ship_collumn.  If 1, add one to ship_row/collumn.  Create this new position as "ship_row2/ship_col2"
+
+##Remember, if the ship is on an edge, it's second position can only be inward.  Can never be <1 or >5.
+if ship_direction == 0:
+    ##Add syntax for adding row position which is collumn (row will be the same)
+    ship_row2 = ship_row
+    if ship_col==1:
+        ship_col2 = ship_col + 1
+    elif ship_col==5:
+        ship_col2 = ship_col - 1
+    elif ship_direction2==0:
+        ship_col2 = ship_col - 1
+    else:
+        ship_col2 = ship_col + 1
+else:
+    ##Add syntax for adding column position which is the row (col will be the same)
+    ship_col2 = ship_col
+    if ship_row == 1:
+        ship_row2 = ship_row + 1
+    elif ship_row == 5:
+        ship_row2 = ship_row - 1
+    elif ship_direction2==0:
+        ship_row2 = ship_row - 1
+    else:
+        ship_row2 = ship_row + 1
+
+print "ship_col2:",ship_col2
+print "ship_row2:",ship_row2
+
 for turn in range(4):
     print "Turn", turn+1
     
