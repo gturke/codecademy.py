@@ -1,0 +1,65 @@
+##Reverse function:
+def reverse(text):
+    text_list = []
+    z = len(text)-1
+    for i in text:
+        text_list.append(text[z])
+        z -=1    
+    return "".join(text_list)
+    
+##Anti-vowel function:
+def anti_vowel(text):
+    vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"]
+    text_list = []
+    for i in text:
+        if i in vowels:
+            text_list.append("")
+        else:
+            text_list.append(i)
+    return "".join(text_list)
+    
+##Scrabble calculator:
+score = {"a": 1, "c": 3, "b": 3, "e": 1, "d": 2, "g": 2, 
+         "f": 4, "i": 1, "h": 4, "k": 5, "j": 8, "m": 3, 
+         "l": 1, "o": 1, "n": 1, "q": 10, "p": 3, "s": 1, 
+         "r": 1, "u": 1, "t": 1, "w": 4, "v": 4, "y": 4, 
+         "x": 8, "z": 10}
+
+def scrabble_score(word):
+    #use str lower on word to convert it to all lower case
+    word = word.lower()
+    total = 0
+    for char in word:
+        total = total + score[char]
+    return total
+    
+##Censor:
+def censor(text,word):
+    replacement = "*"*len(word)
+    new_word = text.split(word)
+    length = len(new_word)
+    while length >1:
+        new_word.insert(length-1,replacement)
+        length -=1
+    return "".join(new_word)
+    
+##Product function:
+def product(int_list):
+    #returns product of all elements in the list
+    index = len(int_list)-1
+    total = int_list[index]
+    while index>0:
+        total = total*int_list[index-1]
+        index -=1
+    return total
+    
+##Remove duplicates:
+def remove_duplicates(list1):
+    new_list = []
+    length = len(list1)-1
+    index = 0
+    while index<=length:
+        if list1[index] not in new_list:
+            new_list.append(list1[index])
+        index +=1
+    return new_list
