@@ -63,3 +63,20 @@ def remove_duplicates(list1):
             new_list.append(list1[index])
         index +=1
     return new_list
+
+##Create Median Function:
+def odd(num):
+    if num % 2==0:
+        return False
+    else:
+        return True
+
+def median(num_list):
+    num_list = sorted(num_list)
+    length = len(num_list)
+    med_index = length/2
+    if odd(length)==True:
+        return num_list[med_index]
+    else:
+        med_index2 = med_index-1
+        return (float(num_list[med_index])+float(num_list[med_index2]))/2
